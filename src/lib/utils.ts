@@ -58,3 +58,38 @@ export const uploadImage = async (file: File): Promise<string> => {
     throw new Error(message);
   }
 };
+
+export const concatenateSearchParams = (
+  url: string,
+  params: Record<string, string | boolean | number | undefined | null>
+) => {
+  const searchParams = new URLSearchParams();
+  for (const [key, value] of Object.entries(params)) {
+    if (value !== undefined && value !== null && value !== '') {
+      searchParams.set(key, String(value));
+    }
+  }
+  const searchString = searchParams.toString();
+  if (searchString) url += '?' + searchString;
+  return url;
+};
+
+export const getSearchString = (searchParameters: Record<string, unknown>): string => {
+  let searchString = '';
+  const keys = Object.keys(searchParameters).sort();
+  for (const key of keys) {
+    if (!key || !searchParameters[key]) continue;
+    searchString += `&${key}=${searchParameters[key]}`;
+  }
+  searchString = searchString.slice(1);
+  if (searchString) return '?' + searchString;
+  return '';
+};
+
+export const formatPrice = (price: number, prefix = true): string => {
+  const formattedPrice = new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 3 }).format(
+    price
+  );
+  if (prefix) return 'Rs. ' + formattedPrice;
+  return formattedPrice;
+};

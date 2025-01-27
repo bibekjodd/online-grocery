@@ -6,8 +6,8 @@ import { Skeleton } from '@/components/ui/skeleton';
 import Avatar from '@/components/utils/avatar';
 import { logo } from '@/components/utils/logo';
 import { useProfile } from '@/queries/use-profile';
+import { ProgressLink } from '@jodd/next-top-loading-bar';
 import { LogInIcon } from 'lucide-react';
-import Link from 'next/link';
 import Search from './search';
 
 export default function Header() {
@@ -16,9 +16,9 @@ export default function Header() {
   return (
     <div className="fixed left-0 top-0 z-30 w-full border-b border-border/50 text-sm text-muted-foreground filter backdrop-blur-2xl">
       <header className="cont flex h-16 items-center justify-between">
-        <Link href="/" className="text-3xl">
+        <ProgressLink href="/" className="text-3xl">
           {logo}
-        </Link>
+        </ProgressLink>
 
         <div className="hidden w-full md:mx-10 md:block lg:mx-20">
           <Search />

@@ -1,5 +1,5 @@
+import { ProgressLink } from '@jodd/next-top-loading-bar';
 import { HomeIcon, LogOutIcon, UserIcon } from 'lucide-react';
-import Link from 'next/link';
 import React from 'react';
 import { openLogoutDialog } from '../dialogs/logout-dialog';
 import { openProfileDialog } from '../dialogs/profile-dialog';
@@ -31,10 +31,10 @@ export default function ProfileDropdown({ children }: { children: React.ReactNod
           </DropdownMenuItem>
 
           <DropdownMenuItem asChild>
-            <Link href="/dashboard" className="flex w-full cursor-pointer items-center">
+            <ProgressLink href="/dashboard" className="flex w-full cursor-pointer items-center">
               <HomeIcon className="size-3.5" />
               <span>Dashboard</span>
-            </Link>
+            </ProgressLink>
           </DropdownMenuItem>
 
           <DropdownMenuSeparator />

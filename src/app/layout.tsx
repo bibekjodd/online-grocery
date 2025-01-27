@@ -5,6 +5,7 @@ import ProfileDialog from '@/components/dialogs/profile-dialog';
 import UpdatePasswordDialog from '@/components/dialogs/update-password-dialog';
 import UpdateProfileDialog from '@/components/dialogs/update-profile-dialog';
 import QueryProvider from '@/providers/query-provider';
+import { LoadingBar } from '@jodd/next-top-loading-bar';
 import type { Metadata } from 'next';
 import { Geist } from 'next/font/google';
 import { Toaster } from 'sonner';
@@ -24,6 +25,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${geist.className} antialiased`}>
         <QueryProvider>
+          <LoadingBar waitingTime={200} color="hsl(var(--brand))" />
+
           <Toaster toastOptions={{ duration: 3000 }} theme="dark" richColors closeButton />
 
           {children}

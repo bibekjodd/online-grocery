@@ -1,6 +1,6 @@
 import { dummyUserImage } from '@/lib/constants';
 import { cn } from '@/lib/utils';
-import Link from 'next/link';
+import { ProgressLink } from '@jodd/next-top-loading-bar';
 import { JSX } from 'react';
 
 type Props = Omit<JSX.IntrinsicElements['img'], 'src'> & {
@@ -66,7 +66,7 @@ export default function Avatar({
     </div>
   );
   if (isLink) {
-    return <Link href={href}>{image}</Link>;
+    return <ProgressLink href={href}>{image}</ProgressLink>;
   }
   return image;
 }
