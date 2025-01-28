@@ -10,6 +10,19 @@ type User = {
   isVerified: boolean;
 };
 
+export interface Product {
+  id?: string;
+  title?: string;
+  description?: string;
+  image?: string | null;
+  category?: 'fruits' | 'vegetables';
+  price?: number;
+  stock?: number;
+  discount?: number;
+  ownerId?: string;
+  createdAt?: string;
+}
+
 type UserProfile = User & {
   authSource: 'credentials' | 'google';
   lastNotificationReadAt: string;
@@ -29,3 +42,34 @@ type Product = {
   createdAt: string;
   owner: User;
 };
+
+// types.ts
+export interface Product {
+  title: string;
+  description: string;
+  image: string | null;
+  category: 'fruits' | 'vegetables';
+  price: number;
+  stock: number;
+  discount: number;
+}
+
+export type ProductFormData = {
+  title: string;
+  description: string;
+  image: string;
+  category: string;
+  price: string;
+  stock: string;
+  discount: string;
+}
+
+export interface FormErrors {
+  title?: string;
+  description?: string;
+  image?: string;
+  category?: string;
+  price?: string;
+  stock?: string;
+  discount?: string;
+}
