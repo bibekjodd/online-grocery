@@ -40,7 +40,7 @@ function BaseComponent() {
         value={searchInput}
         onChange={(e) => setSearchInput(e.target.value)}
         placeholder="Search products..."
-        className="h-11 w-full rounded-lg border-2 border-foreground/10 bg-transparent pl-9 pr-8 text-base text-foreground ring-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2"
+        className="h-11 w-full rounded-lg border-2 bg-transparent pl-9 pr-8 text-base text-foreground ring-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2"
       />
       {searchInput && (
         <X

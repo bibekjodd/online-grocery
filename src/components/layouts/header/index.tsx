@@ -14,7 +14,7 @@ export default function Header() {
   const { data: profile, isFetched } = useProfile();
 
   return (
-    <div className="fixed left-0 top-0 z-30 w-full border-b border-border/50 text-sm text-muted-foreground filter backdrop-blur-2xl">
+    <div className="max-width section-padding-x fixed left-0 top-0 z-30 w-full border-b border-border/50 text-sm text-muted-foreground filter backdrop-blur-2xl">
       <header className="cont flex h-16 items-center justify-between">
         <ProgressLink href="/" className="text-3xl">
           {logo}

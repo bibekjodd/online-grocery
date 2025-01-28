@@ -2,6 +2,7 @@ import { apiClient } from '@/lib/api-client';
 import { MILLIS } from '@/lib/constants';
 import { getQueryClient } from '@/lib/query-client';
 import { isShallowEqual } from '@/lib/utils';
+import { UserProfile } from '@/typing';
 import { useQuery } from '@tanstack/react-query';
 
 export const profileKey = ['profile'];

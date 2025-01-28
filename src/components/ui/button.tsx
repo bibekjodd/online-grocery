@@ -67,14 +67,15 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       <Comp className={cn(buttonVariants({ variant, size, className }))} ref={ref} {...props}>
         <span className={cn('inline-flex items-center justify-center', { 'opacity-0': loading })}>
           {IconLeft && (
-            <IconLeft
-              className={cn('mr-2', { 'size-3.5': size === 'sm', 'size-4': size !== 'sm' })}
-            />
+            <IconLeft className={cn({ 'size-3.5': size === 'sm', 'size-4': size !== 'sm' })} />
           )}
           <span
-            className={cn('inline-flex items-center justify-center', {
-              'h-10 rounded-full bg-background/95 px-10': variant === 'moving-border'
-            })}
+            className={cn(
+              'hover:brightness-115 custom-transition inline-flex items-center justify-center bg-red-600 px-8 py-2 text-white',
+              {
+                'h-10 rounded-full bg-background/95 px-10': variant === 'moving-border'
+              }
+            )}
           >
             {children}
           </span>

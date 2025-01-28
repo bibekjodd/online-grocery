@@ -1,4 +1,5 @@
 import { apiClient } from '@/lib/api-client';
+import { Product } from '@/typing';
 import { UseQueryOptions, useQuery } from '@tanstack/react-query';
 
 export const productKey = (id: string) => ['product', id];
